@@ -1,0 +1,30 @@
+Autocaster:
+
+
+caster.py: finds optimal solutions
+
+caster2.py: finds a good enough solution quickly.
+
+Given a model of what roles in your game have which features, and a
+csv of app information (say, collected from Google Forms), either
+program can find a matching of apps to roles.
+
+On a Mac about 2017, use Homebrew to `brew install python3; brew
+install z3 --with-python3`.  Presumably python3 becomes standard at
+some point.  Try first on the enclosed .csv file, which should take
+about FIXME minutes to run.
+
+Then you'll need to adjust runs and cols, bias and target, add a model
+of your characters, and collect your apps.  If you have problems,
+please call!
+
+It can often be much, much faster to find a good-enough solution by
+binary search than by insisting on an optimal solution.  Yes, this
+should be automated---patches welcome.  Until then, start with a low
+target.  Run the caster.  If it fails, you're game's uncastable!  If
+it succeeds, double the target and run again.  Repeat until it fails
+or takes a while.  If it's taking long enough for you to get bored,
+now you can do binary search to find the highest target that will
+succeed quickly.
+
+Copyright 2017 Brian Sniffen.  See LICENSE.
